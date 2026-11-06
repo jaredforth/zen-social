@@ -20,9 +20,9 @@ zen social makes the internet quieter.
 
 pause: before a distracting site opens, a black screen asks "why are you here?" Leave, or continue after a short countdown.
 
-no feeds: home feeds, explore, reels, shorts and For You pages are hidden on Facebook, Instagram, Threads, YouTube, LinkedIn, X, TikTok, Pinterest and Reddit. Single posts and search still work.
+no feeds: home feeds, explore pages and short-video feeds are hidden on popular social sites. Single posts and search still work.
 
-no recommendations: YouTube suggestions, end screens and Shorts, and X trends and "who to follow", are hidden.
+no recommendations: suggested videos, end screens, trends and "who to follow" panels are hidden.
 
 gray: every distracting site shows in grayscale, so it pulls less at your attention.
 
