@@ -1,0 +1,55 @@
+/* Gray: no color on social sites. */
+html:not([data-zs-off~="gray"]) { filter: grayscale(1) !important; }
+
+/* Feed: hide the main column on feed pages (see isFeed in content.js). */
+/* ponytail: hides the whole main column (and X's composer), not just the feed; narrow per site if needed. */
+html[data-zs-feed]:not([data-zs-off~="feed"]) :is(main, [role="main"], ytd-browse[page-subtype="home"], ytd-shorts) {
+  display: none !important;
+}
+html[data-zs-feed]:not([data-zs-off~="feed"]) body::after {
+  content: "nothing to see here.";
+  position: fixed;
+  inset: 45% 0 auto;
+  text-align: center;
+  font: 300 22px -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #666;
+  pointer-events: none;
+}
+
+/* Algorithm: recommendations, trends, Shorts on every page. */
+html:not([data-zs-off~="algo"]) :is(
+  #related,
+  .ytp-endscreen-content,
+  .ytp-ce-element,
+  ytd-reel-shelf-renderer,
+  ytd-rich-shelf-renderer[is-shorts],
+  ytd-guide-entry-renderer:has(a[title="Shorts"]),
+  ytd-mini-guide-entry-renderer[aria-label="Shorts"],
+  [aria-label="Timeline: Trending now"],
+  aside[aria-label="Who to follow"]
+) {
+  display: none !important;
+}
+
+/* Pause overlay: monochrome, light type, text buttons. Reset so site CSS can't leak in. */
+#zs-pause, #zs-pause * { all: unset; }
+#zs-pause {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #000;
+  color: #fff;
+  font: 300 28px/1.4 -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: -0.01em;
+}
+#zs-pause p { display: block; animation: zs-breathe 8s ease-in-out infinite; }
+#zs-pause div { display: flex; gap: 48px; margin-top: 64px; }
+#zs-pause button { font-size: 16px; cursor: pointer; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+#zs-pause button:disabled { cursor: default; color: #555; border-color: transparent; }
+#zs-pause button:focus-visible { outline: 1px solid #fff; outline-offset: 4px; }
+@keyframes zs-breathe { 50% { opacity: .35; } }

@@ -1,0 +1,126 @@
+{
+  "manifest_version": 3,
+  "name": "zs",
+  "version": "0.1.0",
+  "description": "Pause before social sites, hide feeds and recommendations, and turn them gray.",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.facebook.com/*",
+        "*://*.instagram.com/*",
+        "*://*.threads.net/*",
+        "*://*.threads.com/*",
+        "*://*.messenger.com/*",
+        "*://*.whatsapp.com/*",
+        "*://*.youtube.com/*",
+        "*://*.linkedin.com/*",
+        "*://*.x.com/*",
+        "*://*.twitter.com/*",
+        "*://*.tiktok.com/*",
+        "*://*.snapchat.com/*",
+        "*://*.pinterest.com/*",
+        "*://*.reddit.com/*"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "js": [
+        "settings.js",
+        "content.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "*://*.bbc.co.uk/*",
+        "*://*.bbc.com/*",
+        "*://*.hulu.com/*",
+        "*://*.news.google.com/*",
+        "*://*.gmail.com/*",
+        "*://*.dailymail.co.uk/*",
+        "*://*.huffingtonpost.com/*",
+        "*://*.9gag.com/*",
+        "*://*.imgur.com/*",
+        "*://*.quora.com/*",
+        "*://*.bing.com/*",
+        "*://*.foxnews.com/*",
+        "*://*.twitch.tv/*",
+        "*://*.slate.com/*",
+        "*://*.feedly.com/*",
+        "*://*.theatlantic.com/*",
+        "*://*.vimeo.com/*",
+        "*://*.itunes.apple.com/*",
+        "*://*.etsy.com/*",
+        "*://*.politico.com/*",
+        "*://*.guardian.co.uk/*",
+        "*://*.bsky.app/*",
+        "*://*.chase.com/*",
+        "*://*.goodreads.com/*",
+        "*://*.wikipedia.org/*",
+        "*://*.archive.org/*",
+        "*://*.substack.com/*",
+        "*://*.medium.com/*",
+        "*://*.tumblr.com/*",
+        "*://*.discord.com/*",
+        "*://*.mastodon.social/*",
+        "*://*.mail.google.com/*",
+        "*://*.netflix.com/*",
+        "*://*.primevideo.com/*",
+        "*://*.disneyplus.com/*",
+        "*://*.max.com/*",
+        "*://*.peacocktv.com/*",
+        "*://*.paramountplus.com/*",
+        "*://*.cnn.com/*",
+        "*://*.nytimes.com/*",
+        "*://*.washingtonpost.com/*",
+        "*://*.wsj.com/*",
+        "*://*.theguardian.com/*",
+        "*://*.nbcnews.com/*",
+        "*://*.cnbc.com/*",
+        "*://*.bloomberg.com/*",
+        "*://*.reuters.com/*",
+        "*://*.apnews.com/*",
+        "*://*.npr.org/*",
+        "*://*.usatoday.com/*",
+        "*://*.axios.com/*",
+        "*://*.vox.com/*",
+        "*://*.buzzfeed.com/*",
+        "*://*.espn.com/*",
+        "*://*.theverge.com/*",
+        "*://*.techcrunch.com/*",
+        "*://*.wired.com/*",
+        "*://*.news.ycombinator.com/*",
+        "*://*.producthunt.com/*",
+        "*://*.lobste.rs/*",
+        "*://*.amazon.com/*",
+        "*://*.ebay.com/*",
+        "*://*.walmart.com/*",
+        "*://*.target.com/*",
+        "*://*.aliexpress.com/*",
+        "*://*.temu.com/*",
+        "*://*.craigslist.org/*",
+        "*://*.zillow.com/*",
+        "*://*.robinhood.com/*",
+        "*://*.coinbase.com/*"
+      ],
+      "js": [
+        "settings.js",
+        "content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_title": "zs settings"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  }
+}

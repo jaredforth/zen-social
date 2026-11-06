@@ -1,0 +1,29 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>zs</title>
+<style>
+  body {
+    margin: 0;
+    padding: 32px 24px;
+    min-width: 280px;
+    background: #000;
+    color: #fff;
+    color-scheme: dark;
+    font: 300 16px/1.6 -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    accent-color: #fff;
+  }
+  fieldset { border: 0; padding: 0; margin: 0 0 32px; }
+  legend { padding: 0; margin-bottom: 8px; font-size: 12px; color: #666; text-transform: lowercase; }
+  label { display: flex; align-items: center; gap: 12px; padding: 2px 0; cursor: pointer; }
+  input[type=checkbox] { margin: 0; width: 14px; height: 14px; }
+  input[type=number] {
+    width: 3em; font: inherit; text-align: center;
+    border: 0; border-bottom: 1px solid #fff; background: none; color: inherit;
+  }
+</style>
+<fieldset id="features"><legend>features</legend></fieldset>
+<fieldset id="sites"><legend>no feeds, no color</legend></fieldset>
+<fieldset id="pauseSites"><legend>pause on</legend></fieldset>
+<fieldset><legend>pause length</legend><label><input id="seconds" type="number" min="0" max="120"> seconds</label></fieldset>
+<script src="settings.js"></script>
+<script src="options.js"></script>
