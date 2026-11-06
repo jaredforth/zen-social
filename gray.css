@@ -1,0 +1,2 @@
+/* Gray: no color on every distracting site. */
+html:not([data-zs-off~="gray"]) { filter: grayscale(1) !important; }
