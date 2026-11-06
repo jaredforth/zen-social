@@ -3,6 +3,7 @@
 const ZS_SITES = [
   'facebook.com', 'instagram.com', 'threads.net', 'threads.com', 'messenger.com', 'whatsapp.com', // Meta
   'youtube.com', 'linkedin.com', 'x.com', 'twitter.com', 'tiktok.com', 'snapchat.com', 'pinterest.com', 'reddit.com',
+  'substack.com', 'medium.com',
 ];
 // Chat apps: no feed, so feed hiding would blank the chat.
 const ZS_CHAT = ['messenger.com', 'whatsapp.com', 'snapchat.com'];
@@ -12,7 +13,7 @@ const ZS_PAUSE_ONLY = [
   'dailymail.co.uk', 'huffingtonpost.com', '9gag.com', 'imgur.com', 'quora.com', 'bing.com', 'foxnews.com',
   'twitch.tv', 'slate.com', 'feedly.com', 'theatlantic.com', 'vimeo.com', 'itunes.apple.com',
   'etsy.com', 'politico.com', 'guardian.co.uk', 'bsky.app', 'chase.com', 'goodreads.com', 'wikipedia.org',
-  'archive.org', 'substack.com', 'medium.com',
+  'archive.org',
   // Social / chat
   'tumblr.com', 'discord.com', 'mastodon.social',
   'mail.google.com',

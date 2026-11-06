@@ -22,7 +22,9 @@
         "*://*.tiktok.com/*",
         "*://*.snapchat.com/*",
         "*://*.pinterest.com/*",
-        "*://*.reddit.com/*"
+        "*://*.reddit.com/*",
+        "*://*.substack.com/*",
+        "*://*.medium.com/*"
       ],
       "css": [
         "gray.css",
@@ -62,8 +64,6 @@
         "*://*.goodreads.com/*",
         "*://*.wikipedia.org/*",
         "*://*.archive.org/*",
-        "*://*.substack.com/*",
-        "*://*.medium.com/*",
         "*://*.tumblr.com/*",
         "*://*.discord.com/*",
         "*://*.mastodon.social/*",
