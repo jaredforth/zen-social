@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "zs",
+  "name": "zen social",
   "version": "0.1.0",
   "description": "Pause before social sites, hide feeds and recommendations, and turn them gray.",
   "background": {
@@ -117,7 +117,7 @@
     "storage"
   ],
   "action": {
-    "default_title": "zs settings"
+    "default_title": "zen social settings"
   },
   "options_ui": {
     "page": "options.html",
