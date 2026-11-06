@@ -5,8 +5,8 @@
 A minimal Chrome extension for calmer browsing.
 
 - **pause:** before a distracting site opens, a black screen asks "why are you here?" You can leave, or continue after a short countdown (10 seconds by default). It shows once per tab per site.
-- **no feeds:** hides home feeds, explore, reels, shorts and For You pages on Meta and big-tech social sites. Single posts and searches still work.
-- **no recommendations:** hides YouTube suggestions, end screens and Shorts, and X trends and "who to follow".
+- **no feeds:** hides home feeds, explore pages and short-video feeds on popular social sites. Single posts and searches still work.
+- **no recommendations:** hides suggested videos, end screens, trends and "who to follow" panels.
 - **gray:** every distracting site shows in grayscale.
 
 Social sites (all four features): Facebook, Instagram, Threads, Messenger, WhatsApp, YouTube, LinkedIn, X, TikTok, Snapchat, Pinterest, Reddit. Messenger, WhatsApp and Snapchat skip feed hiding, because their main view is your chats.
