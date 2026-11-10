@@ -7,6 +7,10 @@ html[data-zs-feed]:not([data-zs-off~="feed"], [data-zs-keep]) :is(main, [role="m
 html[data-zs-feed][data-zs-keep]:not([data-zs-off~="feed"]) :is([data-testid="HomeScreen"], [data-testid="searchScreen"], [data-testid="notificationsScreen"]) {
   display: none !important;
 }
+/* linkedin.com: keep the sidebars and nav, hide only the centre column. */
+html[data-zs-feed][data-zs-keep="li"]:not([data-zs-off~="feed"]) :is(main, .scaffold-layout__main, [data-finite-scroll-hotkey-context="FEED"]) {
+  display: none !important;
+}
 html[data-zs-feed]:not([data-zs-off~="feed"]) body::after {
   content: "nothing to see here.";
   position: fixed;

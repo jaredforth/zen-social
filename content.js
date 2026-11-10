@@ -7,6 +7,7 @@ const here = (list) => list.some((d) => location.hostname === d || location.host
 // ponytail: polls for SPA navigation; switch to the Navigation API if 300ms lag matters.
 const mark = () => root.toggleAttribute('data-zs-feed', !here(ZS_CHAT) && isFeed(location.pathname));
 if (here(['bsky.app'])) root.setAttribute('data-zs-keep', '');
+if (here(['linkedin.com'])) root.setAttribute('data-zs-keep', 'li');
 mark();
 setInterval(mark, 300);
 
@@ -33,8 +34,12 @@ function pause(seconds) {
   const shadow = o.attachShadow({ mode: 'closed' });
   shadow.innerHTML = `
     <style>
-      main {
-        position: absolute; inset: 0;
+      dialog {
+        position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none;
+        margin: 0; padding: 0; border: 0; pointer-events: auto;
+        display: none;
+      }
+      dialog[open] {
         display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
         background: #000; color: #fff;
         font: 300 28px/1.4 -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -50,12 +55,22 @@ function pause(seconds) {
       button:focus-visible { outline: 1px solid #fff; outline-offset: 4px; }
       @keyframes breathe { 50% { opacity: .35; } }
     </style>
-    <main>
+    <dialog>
       <p>breathe.</p>
       <p>why are you here?</p>
       <div><button id="zs-leave">leave</button><button id="zs-go"></button></div>
-    </main>`;
+    </dialog>`;
   root.append(o);
+  // Top-layer modal: sites that open their own modal dialog make everything else inert.
+  const d = shadow.querySelector('dialog');
+  d.oncancel = (e) => e.preventDefault();
+  d.showModal();
+  // A site dialog opened later would sit above ours; re-show ours so it stays on top.
+  let seen = 0;
+  const top = setInterval(() => {
+    const k = document.querySelectorAll(':modal').length;
+    if (k !== seen && (seen = k)) { d.close(); d.showModal(); }
+  }, 300);
 
   const go = shadow.getElementById('zs-go');
   let n = seconds;
@@ -67,6 +82,18 @@ function pause(seconds) {
   const t = setInterval(tick, 1000);
   tick();
 
-  go.onclick = () => { sessionStorage.setItem('zs-paused', '1'); o.remove(); };
-  shadow.getElementById('zs-leave').onclick = () => chrome.runtime.sendMessage('close');
+  const leave = shadow.getElementById('zs-leave');
+  const act = (b) => {
+    if (b === go && !go.disabled) { sessionStorage.setItem('zs-paused', '1'); o.remove(); clearInterval(top); for (const t of EV) removeEventListener(t, trap, true); }
+    else if (b === leave) chrome.runtime.sendMessage('close');
+  };
+  // Page scripts (LinkedIn) can swallow clicks before they reach the shadow DOM, so handle
+  // them at the window in the capture phase and hit-test the buttons ourselves.
+  const hit = (b, e) => { const r = b.getBoundingClientRect(); return e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top - 8 && e.clientY <= r.bottom + 8; };
+  const trap = (e) => {
+    e.stopImmediatePropagation(); e.preventDefault();
+    if (e.type === 'click') act([go, leave].find((b) => hit(b, e)));
+  };
+  const EV = ['click', 'mousedown', 'mouseup', 'pointerdown', 'pointerup'];
+  for (const t of EV) addEventListener(t, trap, true);
 }
