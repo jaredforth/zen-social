@@ -6,6 +6,7 @@ const here = (list) => list.some((d) => location.hostname === d || location.host
 
 // ponytail: polls for SPA navigation; switch to the Navigation API if 300ms lag matters.
 const mark = () => root.toggleAttribute('data-zs-feed', !here(ZS_CHAT) && isFeed(location.pathname));
+if (here(['bsky.app'])) root.setAttribute('data-zs-keep', '');
 mark();
 setInterval(mark, 300);
 

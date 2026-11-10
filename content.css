@@ -1,6 +1,10 @@
 /* Feed: hide the main column on feed pages (see isFeed in content.js). */
 /* ponytail: hides the whole main column (and X's composer), not just the feed; narrow per site if needed. */
-html[data-zs-feed]:not([data-zs-off~="feed"]) :is(main, [role="main"], ytd-browse[page-subtype="home"], ytd-shorts, #root, #app, #__next, main ~ div) {
+html[data-zs-feed]:not([data-zs-off~="feed"], [data-zs-keep]) :is(main, [role="main"], ytd-browse[page-subtype="home"], ytd-shorts, #root, #app, #__next, main ~ div) {
+  display: none !important;
+}
+/* bsky.app: keep the sidebar, hide only the feed screens. */
+html[data-zs-feed][data-zs-keep]:not([data-zs-off~="feed"]) :is([data-testid="HomeScreen"], [data-testid="searchScreen"], [data-testid="notificationsScreen"]) {
   display: none !important;
 }
 html[data-zs-feed]:not([data-zs-off~="feed"]) body::after {
