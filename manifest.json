@@ -25,7 +25,8 @@
         "*://*.reddit.com/*",
         "*://*.substack.com/*",
         "*://*.medium.com/*",
-        "*://*.bsky.app/*"
+        "*://*.bsky.app/*",
+        "*://*.goodreads.com/*"
       ],
       "css": [
         "gray.css",
@@ -61,7 +62,6 @@
         "*://*.politico.com/*",
         "*://*.guardian.co.uk/*",
         "*://*.chase.com/*",
-        "*://*.goodreads.com/*",
         "*://*.wikipedia.org/*",
         "*://*.archive.org/*",
         "*://*.tumblr.com/*",
