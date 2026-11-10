@@ -1,7 +1,7 @@
 const root = document.documentElement;
 
 // Feed / algorithmic pages: home timelines, explore, reels, shorts, For You, r/popular, r/all.
-const isFeed = (p) => p === '/' || /^\/(home|feed|explore|reels|shorts|foryou|r\/popular|r\/all)(\/|$)/.test(p);
+const isFeed = (p) => p === '/' || /^\/(home|feed|explore|reels|shorts|foryou|r\/popular|r\/all|tag|topic|explore-topics|notifications)(\/|$)/.test(p);
 const here = (list) => list.some((d) => location.hostname === d || location.hostname.endsWith('.' + d));
 
 // ponytail: polls for SPA navigation; switch to the Navigation API if 300ms lag matters.

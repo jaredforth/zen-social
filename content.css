@@ -1,6 +1,6 @@
 /* Feed: hide the main column on feed pages (see isFeed in content.js). */
 /* ponytail: hides the whole main column (and X's composer), not just the feed; narrow per site if needed. */
-html[data-zs-feed]:not([data-zs-off~="feed"]) :is(main, [role="main"], ytd-browse[page-subtype="home"], ytd-shorts) {
+html[data-zs-feed]:not([data-zs-off~="feed"]) :is(main, [role="main"], ytd-browse[page-subtype="home"], ytd-shorts, #root, #app, #__next, main ~ div) {
   display: none !important;
 }
 html[data-zs-feed]:not([data-zs-off~="feed"]) body::after {

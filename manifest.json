@@ -24,7 +24,8 @@
         "*://*.pinterest.com/*",
         "*://*.reddit.com/*",
         "*://*.substack.com/*",
-        "*://*.medium.com/*"
+        "*://*.medium.com/*",
+        "*://*.bsky.app/*"
       ],
       "css": [
         "gray.css",
@@ -59,7 +60,6 @@
         "*://*.etsy.com/*",
         "*://*.politico.com/*",
         "*://*.guardian.co.uk/*",
-        "*://*.bsky.app/*",
         "*://*.chase.com/*",
         "*://*.goodreads.com/*",
         "*://*.wikipedia.org/*",
@@ -131,7 +131,7 @@
   },
   "options_ui": {
     "page": "options.html",
-    "open_in_tab": false
+    "open_in_tab": true
   },
   "icons": {
     "16": "icons/16.png",
