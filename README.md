@@ -27,3 +27,7 @@ Click the toolbar icon. You can turn each feature and each site on or off, and s
 ## Development
 
 Plain JS and CSS. No build step and no dependencies. After you edit a file, reload the extension card. See [`CLAUDE.md`](CLAUDE.md) for how the parts work and how to edit them safely.
+
+## License
+
+AGPL-3.0-or-later. See [`LICENSE`](LICENSE).
